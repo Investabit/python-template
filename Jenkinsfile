@@ -17,11 +17,11 @@ pipeline {
       steps {
         script {
           docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-            image = docker.image('investabit/images:reporting-master')
+            image = docker.image('investabit/images:project-master')
             image.pull()
           }
           image.inside ('--entrypoint="" -u root:root') {
-            sh 'cd /usr/src/reporting && python -m pytest --junitxml=$WORKSPACE/build/results.xml || true'
+            sh 'cd /usr/src/project && python -m pytest --junitxml=$WORKSPACE/build/results.xml || true'
             sh 'chown -R 10000:10000 $WORKSPACE/build'
             junit allowEmptyResults: true, testResults: 'build/results.xml'
           }
@@ -32,11 +32,11 @@ pipeline {
       steps {
         script {
           docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-            image = docker.image('investabit/images:reporting-master')
+            image = docker.image('investabit/images:project-master')
             image.pull()
           }
           image.inside ('--entrypoint="" -u root:root') {
-            sh 'cd /usr/src/reporting && flake8 --exit-zero --ignore E501,W503,E203 --max-line-length 100 --select C,E,F,W,B,B950 --output-file=$WORKSPACE/flake8.log backtest'
+            sh 'cd /usr/src/project && flake8 --exit-zero --ignore E501,W503,E203 --max-line-length 100 --select C,E,F,W,B,B950 --output-file=$WORKSPACE/flake8.log backtest'
             sh 'chown -R 10000:10000 $WORKSPACE/flake8.log'
             recordIssues enabledForFailure: true, tools: [flake8(pattern: 'flake8.log')]
           }
@@ -47,11 +47,11 @@ pipeline {
       steps {
         script {
           docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-            image = docker.image('investabit/images:reporting-master')
+            image = docker.image('investabit/images:project-master')
             image.pull()
           }
           image.inside ('--entrypoint="" -u root:root') {
-            sh 'cd /usr/src/reporting && mypy --ignore-missing-imports --follow-imports normal --warn-unused-configs --disallow-subclassing-any --disallow-untyped-calls --disallow-untyped-defs --disallow-incomplete-defs --check-untyped-defs --no-implicit-optional --warn-redundant-casts --warn-unused-ignores --warn-return-any backtest > $WORKSPACE/mypy.log || true'
+            sh 'cd /usr/src/project && mypy --ignore-missing-imports --follow-imports normal --warn-unused-configs --disallow-subclassing-any --disallow-untyped-calls --disallow-untyped-defs --disallow-incomplete-defs --check-untyped-defs --no-implicit-optional --warn-redundant-casts --warn-unused-ignores --warn-return-any backtest > $WORKSPACE/mypy.log || true'
             sh 'chown -R 10000:10000 $WORKSPACE/mypy.log'
             recordIssues enabledForFailure: true, tools: [myPy(pattern: 'mypy.log')]
           }

@@ -1,5 +1,4 @@
-# Compiled source #
-###################
+# Compiled source
 *.class
 *.dll
 *.exe
@@ -8,12 +7,10 @@
 *.pyc
 *.so
 
-# Profiling data #
-##################
+# Profiling data
 *.lprof
 
-# Packages #
-############
+# Packages
 *.7z
 *.dmg
 *.gz
@@ -23,38 +20,32 @@
 *.tar
 *.zip
 
-# Emacs and Vim #
-#################
+# Emacs and Vim
 .*~
-.#*
+.\#*
+\#*\#
+*.bak
+*.elc
 *.swo
 *.swp
-#.swap
+*.swap
 
-# sed #
-#######
-*.bak
-
-# Data Files #
-##############
+# Data Files
 *.csv
 *.h5
 *.hd5
 *.hdf
 *.hdf5
 
-# Logs and databases #
-######################
+# Logs and databases
 *.log
 *.log.*
 *.sqlite
 
-# Node.js #
-###########
+# Node.js
 node_modules
 
-# OS generated files #
-######################
+# OS generated files
 ._*
 .AppleDouble
 .DS_Store
@@ -68,8 +59,7 @@ ehthumbs.db
 srecode-map.el
 Thumbs.db
 
-# Python and Packages #
-#######################
+# Python and packages
 .installed.cfg
 *.egg
 *.egg-info
@@ -77,7 +67,6 @@ Thumbs.db
 **/__pycache__
 **/.cache
 **/.pytest_cache
-# Python installer logs
 bin
 build
 develop-eggs
@@ -90,18 +79,16 @@ pip-log.txt
 sdist
 var
 
-# Python testing #
-##################
+# Python testing
 .coverage
 .tox
 nosetests.xml
 
-# Python dev #
-##############
+# Python development
 .idea
 .mr.developer.cfg
 .mypy_cache
 .project
 .pydevproject
 .python-version
-*.ipynb*
+.ipynb_checkpoints

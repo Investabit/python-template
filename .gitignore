@@ -1,0 +1,107 @@
+# Compiled source #
+###################
+*.class
+*.dll
+*.exe
+*.o
+*.out
+*.pyc
+*.so
+
+# Profiling data #
+##################
+*.lprof
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Emacs and Vim #
+#################
+.*~
+.#*
+*.swo
+*.swp
+#.swap
+
+# sed #
+#######
+*.bak
+
+# Data Files #
+##############
+*.csv
+*.h5
+*.hd5
+*.hdf
+*.hdf5
+
+# Logs and databases #
+######################
+*.log
+*.log.*
+*.sqlite
+
+# Node.js #
+###########
+node_modules
+
+# OS generated files #
+######################
+._*
+.AppleDouble
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+.vscode
+*.DS_Store
+Desktop.ini
+ehthumbs.db
+srecode-map.el
+Thumbs.db
+
+# Python and Packages #
+#######################
+.installed.cfg
+*.egg
+*.egg-info
+*.py[cod]
+**/__pycache__
+**/.cache
+**/.pytest_cache
+# Python installer logs
+bin
+build
+develop-eggs
+dist
+eggs
+lib
+lib64
+parts
+pip-log.txt
+sdist
+var
+
+# Python testing #
+##################
+.coverage
+.tox
+nosetests.xml
+
+# Python dev #
+##############
+.idea
+.mr.developer.cfg
+.mypy_cache
+.project
+.pydevproject
+.python-version
+*.ipynb*

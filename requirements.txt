@@ -1,0 +1,38 @@
+#
+# All requirements for production
+#
+
+setuptools>=40.7.2
+wheel>=0.32.3
+
+# Investabit main python library repo
+git+ssh://git@github.com/investabit/investabit-python@v1.1.1#egg=investabit
+
+# Data processing
+numpy~=1.15.0
+pandas~=0.23.0
+tables>=3.4.3
+
+# Improving numpy / pandas performance
+numba>=0.40.1
+bottleneck>=1.2.1
+numexpr>=2.6.8
+
+# Plotting
+matplotlib>=2.2.3
+seaborn>=0.9.0
+cufflinks>=0.14.6
+psutil>=5.4.7
+
+# Time handling
+arrow>=0.12.1
+
+# Database
+psycopg2~=2.7.0
+psycopg2-binary~=2.7.0
+
+# CLI and configuration
+click>=6.7
+docopt>=0.6.2
+pyyaml>=3.13
+tabulate>=0.8.2

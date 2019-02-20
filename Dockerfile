@@ -7,6 +7,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 FROM base AS build
+ARG PROJECT=project
 ARG SSH_PRIVATE_KEY
 
 WORKDIR /usr/src/${PROJECT}
@@ -22,6 +23,7 @@ RUN pip install --no-cache-dir -r requirements.txt \
     && pip install --no-cache-dir -r requirements-test.txt
 
 FROM base
+ARG PROJECT=project
 
 COPY --from=build /usr/local/lib/python3.7/site-packages/ /usr/local/lib/python3.7/site-packages/
 COPY --from=build /usr/local/bin/flake8 /usr/local/bin/mypy /usr/local/bin/

@@ -1,0 +1,7 @@
+*.ipynb linguist-vendored
+*.css linguist-vendored
+*.scss linguist-vendored
+*.sass linguist-vendored
+*.less linguist-vendored
+*.html linguist-vendored
+*.sql linguist-language=PLpgSQL

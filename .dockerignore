@@ -36,6 +36,7 @@
 *.hd5
 *.hdf
 *.hdf5
+*.parquet
 
 # Logs and databases
 *.log
@@ -101,3 +102,5 @@ nosetests.xml
 # Docker
 .dockerignore
 Dockerfile
+Jenkinsfile
+Makefile

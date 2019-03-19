@@ -36,6 +36,7 @@
 *.hd5
 *.hdf
 *.hdf5
+*.parquet
 
 # Logs and databases
 *.log

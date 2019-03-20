@@ -3,7 +3,6 @@ ARG PROJECT=project
 
 WORKDIR /tmp/
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends libhdf5-dev \
     && rm -rf /var/lib/apt/lists/*
 
 FROM base AS build

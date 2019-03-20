@@ -2,7 +2,7 @@ import imp
 import re
 import subprocess
 from os.path import abspath, dirname, join
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 from setuptools import find_packages, setup
 
@@ -38,12 +38,13 @@ except Exception as e:  # Last ditch attempt
         print("Failed to determine pip version, assuming version {}!".format(PIP_VER))
 
 
-def find_version() -> str:
+def find_version(project: Optional[str] = None) -> str:
     """Searches the package init file for the version."""
     if not VERSION:
         version = dict()
         try:
-            project = NAME.lower().replace("-", "_").replace(" ", "_")
+            if project is None:
+                project = NAME.lower().replace("-", "_").replace(" ", "_")
             with open(join(abspath(dirname(__file__)), project, "__version__.py")) as f:
                 exec(f.read(), version)
             return str(version["__version__"])

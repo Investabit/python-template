@@ -36,6 +36,7 @@
 *.hd5
 *.hdf
 *.hdf5
+*.parq
 *.parquet
 
 # Logs and databases
@@ -86,6 +87,7 @@ var
 nosetests.xml
 
 # Python development
+.env
 .idea
 .mr.developer.cfg
 .mypy_cache

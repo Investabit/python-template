@@ -2,7 +2,8 @@ FROM python:3.7.2 AS base
 ARG PROJECT=project
 
 WORKDIR /tmp/
-RUN apt-get update \
+RUN apt-get update -y \
+    && apt-get install -y --no-install-recommends libsnappy-dev \
     && rm -rf /var/lib/apt/lists/*
 
 FROM base AS build
